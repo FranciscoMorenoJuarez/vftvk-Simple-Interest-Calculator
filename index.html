@@ -1,16 +1,40 @@
+<!DOCTYPE html>
 <html>
     <head>
+    <title>Simple Interest Calculator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <div class="maindiv">
         <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+        Amount <input type="number"  id="principal">  <br/><br>
 
-        <button onclick="compute()">Compute</button>
-    </body>
+        Interest Rate: 
+        <!--This is the rate input with values from 1 to 20 with a step of 0.25, updateRate is a function contained in script.js-->
+        <input type="range"  id="rate" min="1" max="20" value="10.25" step="0.25" onchange="updateRate()">
+        <!--This span will show us the value of the rate input, is like reserving an space before using it-->
+        <span id="rate_val">
+            10.25%
+        </span><br><br>
+        <!--A select with options of year from 1 to 10-->
+        No. of Years <select id="years">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>  <br><br>
+
+        <!--As soon as the click is pressed, the function compute() will make its work-->
+        <button onclick="compute()">Compute Interest</button><br><br>
+        <span id="result"></span><br>
+
+        <footer> &#169; This Calculator belongs to --Francisco Moreno Juárez--</footer>
+    </div>
 </html>
